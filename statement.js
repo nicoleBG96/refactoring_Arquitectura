@@ -6,7 +6,7 @@ function statement (invoice, plays) {
                       { style: "currency", currency: "USD",
                         minimumFractionDigits: 2 }).format;
   for (let perf of invoice.performances) {
-    const play = plays[perf.playID];
+    const play = playFor (perf);
     let thisAmount = amountFor (perf, play);
 
     // add volume credits
@@ -44,5 +44,9 @@ function statement (invoice, plays) {
         throw new Error(`unknown type: ${play.type}`);
     }
     return result;
+  }
+
+  function playFor (aPerformance){
+    return plays [aPerformance.playID];
   }
 }
