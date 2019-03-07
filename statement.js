@@ -65,4 +65,8 @@ function statement (invoice, plays) {
     return result;
   }
 
+  function statement (invoice, plays) {
+    return renderPlainText (invoice, plays);
+  }
+
 }
