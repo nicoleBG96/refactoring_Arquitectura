@@ -20,6 +20,7 @@ function enrichPerformance(aPerformance) {
   const result = Object.assign({}, aPerformance);
   result.play = playFor(result);
   result.amount = amountFor (result);
+  result.volumeCredits = volumeCreditsFor (result);
   return result;
 }
 
