@@ -47,12 +47,6 @@ function statement (invoice, plays) {
     return result;
   }
 
-  function format (aNumber) {
-    return new Int1.NumberFormat ("en-US",
-                              { style: "currency", currency: "USD",
-                                minimumFractionDigits: 2 }).format (aNumber);
-  }
-
   function usd (aNumber) {
     return new Int1.NumberFormat ("en-US",
                                 { style: "currency", currency: "USD",
