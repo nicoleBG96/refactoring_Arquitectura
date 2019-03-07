@@ -7,7 +7,7 @@ function statement (invoice, plays) {
     result += ` ${playFor (perf).name}: ${usd(amountFor(perf)/100)} (${perf.audience} seats)\n`;
     totalAmount += amountFor(perf);
   }
-  let volumeCredits = 0;
+  let volumeCredits = totalVolumeCredits ();
   for (let perf of invoice.performances) {
     volumeCredits += volumeCreditsFor (perf); 
   }
