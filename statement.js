@@ -2,6 +2,8 @@ function statement (invoice, plays) {
   const statementData = {};
   statementData.customer = invoice.customer;
   statementData.performances = invoice.performances.map (enrichPerformance); 
+  statementData.totalAmount = totalAmount (statementData);
+  statementData.totalVolumeCredits = totalVolumeCredits (statementData);
   return renderPlainText (statementData, plays);
 }
 
@@ -63,7 +65,7 @@ function enrichPerformance(aPerformance) {
                                 minimumFractionDigits: 2 }).format(aNumber/100);
   }
 
-  function totalVolumeCredits () {
+  function totalVolumeCredits (data) {
     let result = 0;
     for (let perf of data.performances){
       result += perf.volumeCredits;
@@ -71,7 +73,7 @@ function enrichPerformance(aPerformance) {
     return result;
   }
 
-  function totalAmount () {
+  function totalAmount (data) {
     let result = 0;
     for (let perf of data.performances){
       result += perf.amount;
