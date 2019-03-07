@@ -57,4 +57,12 @@ function statement (invoice, plays) {
     return volumeCredits;
   }
 
+  function totalAmount () {
+    let totalAmount = 0;
+    for (let perf of invoice.performances){
+      totalAmount += amountFor (perf);
+    }
+    return totalAmount;
+  }
+
 }
