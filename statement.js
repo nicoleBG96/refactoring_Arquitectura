@@ -5,8 +5,8 @@ function statement (invoice, plays) {
     
     // print line for this order
     result += ` ${playFor (perf).name}: ${usd(amountFor(perf)/100)} (${perf.audience} seats)\n`;
-    totalAmount += amountFor(perf);
   }
+  let totalAmount = appleSauce ();
 
   result += `Amount owed is ${usd(totalAmount/100)}\n`;
   result += `You earned ${totalVolumeCredits} credits\n`;
