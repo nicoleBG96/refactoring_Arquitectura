@@ -19,6 +19,7 @@ function  renderPlainText (data, plays) {
 function enrichPerformance(aPerformance) {
   const result = Object.assign({}, aPerformance);
   result.play = playFor(result);
+  result.amount = amountFor (result);
   return result;
 }
 
