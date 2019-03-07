@@ -1,7 +1,7 @@
 function statement (invoice, plays) {
   const statementData = {};
   statementData.customer = invoice.customer;
-  statementData.performances = invoice.performances; 
+  statementData.performances = invoice.performances.map (enrichPerformance); 
   return renderPlainText (statementData, plays);
 }
 
@@ -13,6 +13,11 @@ function  renderPlainText (data, plays) {
 
   result += `Amount owed is ${usd(totalAmount ())}\n`;
   result += `You earned ${totalVolumeCredits () } credits\n`;
+  return result;
+}
+
+function enrichPerformance(aPerformance) {
+  const result = Object.assign({}, aPerformance);
   return result;
 }
 
