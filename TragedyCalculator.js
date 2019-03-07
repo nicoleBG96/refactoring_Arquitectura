@@ -1,0 +1,3 @@
+class TragedyCalculator extends PerformanceCalculator {
+    
+}

@@ -23,21 +23,11 @@ function createPerformanceCalculator(aPerformance, aPlay) {
         default:throw new Error(`unknown type: ${aPlay.type}`);
     }
 }
-
-function amountFor (aPerformance) {
-    return new PerformanceCalculator(aPerformance, playFor(aPerformance)).amount;
-}
   
 function playFor (aPerformance) {
     return plays [aPerformance.playID];
 }
   
-function volumeCreditsFor (aPerformance) {
-    let result = 0;
-    result += Math.max(aPerformance.audience - 30, 0);
-    if ("comedy" === aPerformance.play.type) result += Math.floor(aPerformance.audience / 5);
-     return result;
-}
   
 function totalVolumeCredits (data) {
     return data.performances
@@ -48,3 +38,5 @@ function totalAmount (data) {
     return data.performances
     .reduce ((total, p) => total + p.amount, 0);
 }
+
+
