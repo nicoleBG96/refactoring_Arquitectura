@@ -52,4 +52,10 @@ function statement (invoice, plays) {
                               { style: "currency", currency: "USD",
                                 minimumFractionDigits: 2 }).format (aNumber);
   }
+
+  function usd (aNumber) {
+    return new Int1.NumberFormat ("en-US",
+                                { style: "currency", currency: "USD",
+                                minimumFractionDigits: 2 }).format(aNumber/100);
+  }
 }
