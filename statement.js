@@ -57,7 +57,7 @@ function  renderPlainText (data, plays) {
 
   function totalVolumeCredits () {
     let result = 0;
-    for (let perf of invoice.performances){
+    for (let perf of data.performances){
       result += volumeCreditsFor (perf);
     }
     return result;
@@ -65,7 +65,7 @@ function  renderPlainText (data, plays) {
 
   function totalAmount () {
     let result = 0;
-    for (let perf of invoice.performances){
+    for (let perf of data.performances){
       result += amountFor (perf);
     }
     return result;
