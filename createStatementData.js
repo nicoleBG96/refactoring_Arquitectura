@@ -58,9 +58,3 @@ function totalAmount (data) {
     return data.performances
     .reduce ((total, p) => total + p.amount, 0);
 }
-
-class PerformanceCalculator {
-    constructor(aPerformance) {
-        this.performance = aPerformance;
-    }
-}
